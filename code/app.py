@@ -8,10 +8,10 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 from models.store import StoreModel
 
-from db import db
+
 
 app = Flask(__name__)
-db.init_app(app)
+
 # app.config["SQLALCAMEY_DATABASE_URI"] = "sqlite:///data.db"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 # app.config['SQLALCHEMY_TRACK_MODIFICATION']
