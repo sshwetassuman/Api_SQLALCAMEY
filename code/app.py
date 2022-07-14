@@ -10,7 +10,17 @@ from models.store import StoreModel
 
 
 
+
 app = Flask(__name__)
+
+from db import db
+
+db.init_app(app)
+
+
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 # app.config["SQLALCAMEY_DATABASE_URI"] = "sqlite:///data.db"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
